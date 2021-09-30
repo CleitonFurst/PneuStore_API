@@ -23,6 +23,16 @@ namespace PneuStore_API.Controllers
         public IActionResult Index() =>
             ApiOk(_service.All());
 
+        [Route("{id}")]
+        [HttpGet]
+        public IActionResult Index(int? id)
+        {
+            Usuario exists = _service.Get(id);
+            return exists == null ?
+                ApiNotFound("Não foi encontrado o Usuario solicitado.") :
+                ApiOk(exists);
+        }
+
         [HttpPost]
         public IActionResult Create([FromBody] Usuario u)
         {
