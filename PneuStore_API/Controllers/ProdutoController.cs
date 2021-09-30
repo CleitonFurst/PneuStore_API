@@ -17,13 +17,9 @@ namespace PneuStore_API.Controllers
         {
             _service = service;
         }
-
-
         [HttpGet]
         public IActionResult Index() =>
             ApiOk(_service.All());
-
-
 
         [Route("{id}")]
         [HttpGet]
