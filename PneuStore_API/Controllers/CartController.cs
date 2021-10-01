@@ -35,8 +35,8 @@ namespace PneuStore_API.Controllers
             ApiOk("Produto criado com sucesso !") :
             ApiNotFound("Erro ao criar o produto!");
 
-        
-        [HttpPut]
+        [Route("{id}")]
+        [HttpPatch]
         public IActionResult Update([FromBody] Cart c) =>
             _service.Update(c) ?
             ApiOk("O Carrinho foi atualizado com sucesso !") :
