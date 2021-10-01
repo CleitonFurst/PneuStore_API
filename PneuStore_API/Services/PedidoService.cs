@@ -7,24 +7,21 @@ using System.Threading.Tasks;
 
 namespace PneuStore_API.Services
 {
-    public class CartService : ICartService
+    public class PedidoService : IPedidoService
     {
-
         API_Context _context;
-        public CartService(API_Context context)
+        public PedidoService(API_Context context)
         {
             this._context = context;
-        }
-        public List<Cart> All()
-        {
-            return _context.Cart.ToList();
-        }
 
-        public bool Create(Cart c)
+        }
+       
+
+        public bool Create(Pedido p)
         {
             try
             {
-                _context.Cart.Add(c);
+                _context.Add(p);
                 _context.SaveChanges();
                 return true;
             }
@@ -38,7 +35,7 @@ namespace PneuStore_API.Services
         {
             try
             {
-                _context.Cart.Remove(Get(id));
+                _context.Remove(this.Get(id));
                 _context.SaveChanges();
                 return true;
             }
@@ -48,16 +45,22 @@ namespace PneuStore_API.Services
             }
         }
 
-        public Cart Get(int? id)
+        public Pedido Get(int? id)
         {
-            return _context.Cart.Find(id);
+            return _context.Pedido.FirstOrDefault(p => p.PedidoId == id);
         }
 
-        public bool Update(Cart c)
+        public List<Pedido> All()
         {
+            return _context.Pedido.ToList();
+        }
+
+        public bool Update(Pedido p)
+        {
+
             try
             {
-                _context.Cart.Update(c);
+                _context.Update(p);
                 _context.SaveChanges();
                 return true;
             }

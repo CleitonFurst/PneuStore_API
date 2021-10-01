@@ -14,7 +14,9 @@ namespace PneuStore_API.Data
             : base (options) { }
         public DbSet<Usuario> Usuarios { get; set;}
         public DbSet<Produto> Produtos { get; set; }
-        public DbSet<PneuStore_API.Model.Cart> Cart { get; set; }
+        public DbSet<Cart> Cart { get; set; }
+        public DbSet<Pedido> Pedido { get; set; }
+
 
     }
 }

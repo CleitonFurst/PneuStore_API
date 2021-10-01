@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 
 namespace PneuStore_API.Model
 {
-    public class Cart
+    public class Pedido
     {
-        public int CartId { get; set; }
-        public int UsuarioId { get; set; }       
+        public int PedidoId { get; set; }
+        public int UsuarioId { get; set; }
         public List<Produto> Produtos { get; set; }
-        
     }
 }

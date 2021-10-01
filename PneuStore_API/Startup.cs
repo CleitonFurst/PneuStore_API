@@ -39,6 +39,8 @@ namespace PneuStore_API
                 options.UseSqlServer(Configuration.GetConnectionString("PneuStore")));
             services.AddTransient<IUsuarioService, UsuarioService>();
             services.AddTransient<IProdutoService, ProdutoService>();
+            services.AddTransient<ICartService, CartService>();
+            services.AddTransient<IPedidoService, PedidoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
