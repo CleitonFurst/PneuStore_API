@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace PneuStore_API.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class PedidoController : ApiBaseController
     {
         IPedidoService _service;

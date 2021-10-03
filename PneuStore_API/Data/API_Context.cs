@@ -17,6 +17,10 @@ namespace PneuStore_API.Data
         public DbSet<Cart> Cart { get; set; }
         public DbSet<Pedido> Pedido { get; set; }
 
-
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+         
+            base.OnModelCreating(builder);
+        }
     }
 }

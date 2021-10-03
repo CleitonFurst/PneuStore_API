@@ -7,22 +7,21 @@ using System.Threading.Tasks;
 
 namespace PneuStore_API.Services
 {
-    public class UsuarioService : IUsuarioService
+    public class PedidoService : IPedidoService
     {
         API_Context _context;
-        public UsuarioService(API_Context context)
+        public PedidoService(API_Context context)
         {
-            _context = context;
+            this._context = context;
+
         }
-        public List<Usuario> All()
-        {
-            return _context.Usuarios.ToList();
-        }
-        public bool Create(Usuario u)
+       
+
+        public bool Create(Pedido p)
         {
             try
             {
-                _context.Add(u);
+                _context.Add(p);
                 _context.SaveChanges();
                 return true;
             }
@@ -31,23 +30,7 @@ namespace PneuStore_API.Services
                 return false;
             }
         }
-        public Usuario Get(int? id)
-        {
-            return _context.Usuarios.FirstOrDefault(u => u.UsuarioId == id);
-        }
-        public bool Update(Usuario u)
-        {
-            try
-            {
-                _context.Update(u);
-                _context.SaveChanges();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
+
         public bool Delete(int? id)
         {
             try
@@ -60,8 +43,31 @@ namespace PneuStore_API.Services
             {
                 return false;
             }
-
         }
-       
+
+        public Pedido Get(int? id)
+        {
+            return _context.Pedido.FirstOrDefault(p => p.PedidoId == id);
+        }
+
+        public List<Pedido> All()
+        {
+            return _context.Pedido.ToList();
+        }
+
+        public bool Update(Pedido p)
+        {
+
+            try
+            {
+                _context.Update(p);
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
