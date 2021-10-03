@@ -33,7 +33,7 @@ namespace PneuStore_API.Services
         }
         public Usuario Get(int? id)
         {
-            return _context.Usuarios.FirstOrDefault(u => u.UsuarioId == id);
+            return _context.Usuarios.FirstOrDefault(u => u.Id == id);
         }
         public bool Update(Usuario u)
         {

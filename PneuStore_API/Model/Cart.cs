@@ -8,8 +8,8 @@ namespace PneuStore_API.Model
     public class Cart
     {
         public int CartId { get; set; }
-
-        public string CartNome { get; set; }
-
+        public int UsuarioId { get; set; }       
+        public List<Produto> Produtos { get; set; }
+        
     }
 }

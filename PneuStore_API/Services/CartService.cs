@@ -15,9 +15,9 @@ namespace PneuStore_API.Services
         {
             this._context = context;
         }
-        public List<Produto> All()
+        public List<Cart> All()
         {
-            return _context.Produtos.ToList();
+            return _context.Cart.ToList();
         }
 
         public bool Create(Cart c)

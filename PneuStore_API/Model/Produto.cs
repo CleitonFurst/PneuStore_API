@@ -10,13 +10,8 @@ namespace PneuStore_API.Model
         public int ProdutoId { get; set; }
         public string NomeProduto { get; set; }
         public double Preco { get; set; }
-        //public string  Descricao { get; set; }
-        //public string Img { get; set; }
+        public string  Descricao { get; set; }
+        public string Img { get; set; }
 
-        public int CartId { get; set; }
-
-        public Cart Cart { get; set; }
-
-        public virtual List<Pedido> Pedidos { get; set; }
     }
 }
