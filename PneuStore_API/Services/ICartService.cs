@@ -8,10 +8,10 @@ namespace PneuStore_API.Services
 {
     public interface ICartService
     {
-        List<Cart> All();
-        bool Create(Cart c);
+        List<Produto> All();
+        bool Create(int? id);
         Cart Get(int? id);
-        bool Update(Cart c);
+        bool Update(int? id);
         bool Delete(int? id);
     }
 }
