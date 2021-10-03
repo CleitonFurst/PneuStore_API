@@ -8,8 +8,8 @@ namespace PneuStore_API.Services
 {
     public interface IProdutoService
     {
-        List<Produto> All();
-        Produto Get(int? id);
+        List<Product> All();
+        Product Get(int? id);
 
     }
 }

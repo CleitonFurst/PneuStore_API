@@ -9,6 +9,6 @@ namespace PneuStore_API.Model
     {
         public int PedidoId { get; set; }
         public int UsuarioId { get; set; }
-        public List<Produto> Produtos { get; set; }
+        public List<Product> Produtos { get; set; }
     }
 }

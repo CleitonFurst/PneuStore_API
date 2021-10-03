@@ -14,14 +14,14 @@ namespace PneuStore_API.Services
         {
             _context = context;
         }
-        public List<Produto> All()
+        public List<Product> All()
         {
-            return _context.Produtos.ToList();
+            return _context.Products.ToList();
         }
 
-        public Produto Get(int? id)
+        public Product Get(int? id)
         {
-            return _context.Produtos.FirstOrDefault(p => p.ProdutoId == id);
+            return _context.Products.FirstOrDefault(p => p.ProductID == id);
         }
     }
 }

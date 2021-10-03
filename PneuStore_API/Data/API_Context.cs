@@ -10,12 +10,15 @@ namespace PneuStore_API.Data
 {
     public class API_Context : IdentityDbContext
     {
+       
+       
         public API_Context(DbContextOptions<API_Context> options) 
             : base (options) { }
-        public DbSet<Usuario> Usuarios { get; set;}
-        public DbSet<Produto> Produtos { get; set; }
-        public DbSet<Cart> Cart { get; set; }
+        public DbSet<Usuario> Usuarios { get; set;}       
+        public DbSet<CartItem> Cart { get; set; }
         public DbSet<Pedido> Pedido { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
 
 
     }

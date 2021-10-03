@@ -215,19 +215,48 @@ namespace PneuStore_API.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("PneuStore_API.Model.Cart", b =>
+            modelBuilder.Entity("PneuStore_API.Model.CartItem", b =>
                 {
-                    b.Property<int>("CartId")
+                    b.Property<string>("ItemId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CartId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("ItemId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Cart");
+                });
+
+            modelBuilder.Entity("PneuStore_API.Model.Category", b =>
+                {
+                    b.Property<int>("CategoryID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("CartId");
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Cart");
+                    b.HasKey("CategoryID");
+
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("PneuStore_API.Model.Pedido", b =>
@@ -245,38 +274,42 @@ namespace PneuStore_API.Migrations
                     b.ToTable("Pedido");
                 });
 
-            modelBuilder.Entity("PneuStore_API.Model.Produto", b =>
+            modelBuilder.Entity("PneuStore_API.Model.Product", b =>
                 {
-                    b.Property<int>("ProdutoId")
+                    b.Property<int>("ProductID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CartId")
+                    b.Property<int?>("CategoryID")
                         .HasColumnType("int");
 
-                    b.Property<string>("Descricao")
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(10000)
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Img")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NomeProduto")
+                    b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("PedidoId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Preco")
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<double?>("UnitPrice")
                         .HasColumnType("float");
 
-                    b.HasKey("ProdutoId");
+                    b.HasKey("ProductID");
 
-                    b.HasIndex("CartId");
+                    b.HasIndex("CategoryID");
 
                     b.HasIndex("PedidoId");
 
-                    b.ToTable("Produtos");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("PneuStore_API.Model.Usuario", b =>
@@ -348,20 +381,33 @@ namespace PneuStore_API.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PneuStore_API.Model.Produto", b =>
+            modelBuilder.Entity("PneuStore_API.Model.CartItem", b =>
                 {
-                    b.HasOne("PneuStore_API.Model.Cart", null)
-                        .WithMany("Produtos")
-                        .HasForeignKey("CartId");
+                    b.HasOne("PneuStore_API.Model.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("PneuStore_API.Model.Product", b =>
+                {
+                    b.HasOne("PneuStore_API.Model.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryID");
 
                     b.HasOne("PneuStore_API.Model.Pedido", null)
                         .WithMany("Produtos")
                         .HasForeignKey("PedidoId");
+
+                    b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("PneuStore_API.Model.Cart", b =>
+            modelBuilder.Entity("PneuStore_API.Model.Category", b =>
                 {
-                    b.Navigation("Produtos");
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("PneuStore_API.Model.Pedido", b =>

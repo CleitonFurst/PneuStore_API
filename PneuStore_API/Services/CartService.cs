@@ -15,12 +15,12 @@ namespace PneuStore_API.Services
         {
             this._context = context;
         }
-        public List<Cart> All()
+        public List<CartItem> All()
         {
             return _context.Cart.ToList();
         }
 
-        public bool Create(Cart c)
+        public bool Create(CartItem c)
         {
             try
             {
@@ -48,12 +48,12 @@ namespace PneuStore_API.Services
             }
         }
 
-        public Cart Get(int? id)
+        public CartItem Get(int? id)
         {
             return _context.Cart.Find(id);
         }
 
-        public bool Update(Cart c)
+        public bool Update(CartItem c)
         {
             try
             {

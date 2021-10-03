@@ -25,7 +25,7 @@ namespace PneuStore_API.Controllers
         [HttpGet]
         public IActionResult Index(int? id)
         {
-            Produto exists = _service.Get(id);
+            Product exists = _service.Get(id);
             return exists == null ?
                 ApiNotFound("Não foi encontrado o produto solicitado.") :
                 ApiOk(exists);
