@@ -23,5 +23,24 @@ namespace PneuStore_API.Services
         {
             return _context.Products.FirstOrDefault(p => p.ProductID == id);
         }
+        public List<Product> ProductByUserRole(string getRole)
+        {
+            var query1 = from product in _context.Set<Product>()
+                         join cart in _context.Set<CartItem>()
+                           on product.ProductID equals cart.ProductId
+                         where cart.ItemId == getRole
+                         select new Product()
+                         {
+                             ProductID = product.ProductID,
+                             ProductName = product.ProductName,
+                             UnitPrice = product.UnitPrice,
+                             Description = product.Description,
+                             ImagePath = product.ImagePath,
+                             CategoryID = product.CategoryID
+
+                         };
+            return query1.ToList();
+
+        }
     }
 }
