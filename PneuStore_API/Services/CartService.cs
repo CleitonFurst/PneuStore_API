@@ -1,4 +1,5 @@
-﻿using PneuStore_API.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using PneuStore_API.Data;
 using PneuStore_API.Model;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,8 @@ namespace PneuStore_API.Services
         {
             return _context.Cart.ToList();
         }
+
+      
 
         public bool Create(CartItem c)
         {
@@ -66,5 +69,13 @@ namespace PneuStore_API.Services
                 return false;
             }
         }
+
+        public List<Product> ProductConsulta(int? id)
+        {
+            var query1 = $"SELECT * FROM Products WHERE ProductID = '{id}'";
+
+            return _context.Products.FromSqlRaw(query1).ToList();
+        }
+
     }
 }

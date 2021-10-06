@@ -49,5 +49,11 @@ namespace PneuStore_API.Controllers
               ApiOk("O Carrinho foi deletado com sucesso!") :
               ApiNotFound("Erro ao deletar o carrinho!");
 
+        [Route("Details/{id}")]
+        [HttpGet]
+        public IActionResult ProductConsulta(int? id)
+        {
+            return ApiOk(_service.ProductConsulta(id))
+        }
     }
 }
