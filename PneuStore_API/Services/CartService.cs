@@ -20,8 +20,6 @@ namespace PneuStore_API.Services
             return _context.Cart.ToList();
         }
 
-      
-
         public bool Create(CartItem c)
         {
             try

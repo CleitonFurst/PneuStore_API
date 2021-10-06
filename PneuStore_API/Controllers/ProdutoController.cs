@@ -30,11 +30,5 @@ namespace PneuStore_API.Controllers
                 ApiNotFound("Não foi encontrado o produto solicitado.") :
                 ApiOk(exists);
         }
-        ///[Route("Product/{itemId}")]
-    //    [HttpGet]
-    //    public IActionResult ProductByUserRole(string role)// função criada para instanciar o método BooksByUserRole da classe BooksSQLService 
-    //    {
-    //        return ApiOk(_service.ProductByUserRole(role));// instancia o método de BooksSQLService passando como referencia o tipo de usúario (Admin/Common) e retorna usando um ApiOk
-    //    }
     }
 }

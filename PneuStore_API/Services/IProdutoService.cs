@@ -10,7 +10,6 @@ namespace PneuStore_API.Services
     {
         List<Product> All();
         Product Get(int? id);
-        public List<Product> ProductByUserRole(string getRole);
 
     }
 }
