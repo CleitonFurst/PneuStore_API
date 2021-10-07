@@ -14,7 +14,7 @@ namespace PneuStore_API.Services
         bool Update(CartItem c);
         bool Delete(int? id);
 
-        List<Product> ProductConsulta(int? id);
+        List<CartItem> ProductConsulta(int? id);
         
     }
 }

@@ -10,7 +10,7 @@ using PneuStore_API.Data;
 namespace PneuStore_API.Migrations
 {
     [DbContext(typeof(API_Context))]
-    [Migration("20211003191826_inicial")]
+    [Migration("20211007005704_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

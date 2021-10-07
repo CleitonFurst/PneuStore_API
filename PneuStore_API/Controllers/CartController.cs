@@ -53,7 +53,7 @@ namespace PneuStore_API.Controllers
         [HttpGet]
         public IActionResult ProductConsulta(int? id)
         {
-            return ApiOk(_service.ProductConsulta(id))
+            return ApiOk(_service.ProductConsulta(id));
         }
     }
 }

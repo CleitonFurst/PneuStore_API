@@ -374,7 +374,6 @@ C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\obj\Debug\
 C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\obj\Debug\net5.0\staticwebassets\PneuStore_API.StaticWebAssets.xml
 C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\obj\Debug\net5.0\scopedcss\bundle\PneuStore_API.styles.css
 C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\obj\Debug\net5.0\PneuStore_API.RazorTargetAssemblyInfo.cache
-C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\obj\Debug\net5.0\PneuStore_API.csproj.CopyComplete
 C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\obj\Debug\net5.0\PneuStore_API.dll
 C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\obj\Debug\net5.0\ref\PneuStore_API.dll
 C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\obj\Debug\net5.0\PneuStore_API.pdb

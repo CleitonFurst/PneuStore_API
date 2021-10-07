@@ -70,11 +70,11 @@ namespace PneuStore_API.Services
             }
         }
 
-        public List<Product> ProductConsulta(int? id)
+        public List<CartItem> ProductConsulta(int? id)
         {
-            var query1 = $"SELECT * FROM Products WHERE ProductID = '{id}'";
+            var query1 = $"SELECT * FROM Cart WHERE cartId = '{id}'";
 
-            return _context.Products.FromSqlRaw(query1).ToList();
+            return _context.Cart.FromSqlRaw(query1).ToList();
         }
 
     }
