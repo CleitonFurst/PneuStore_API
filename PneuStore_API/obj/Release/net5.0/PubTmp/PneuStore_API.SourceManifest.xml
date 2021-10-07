@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Blue\PneuStore_API\PneuStore_API\obj\Release\net5.0\PubTmp\Out\" />
+  <dbfullsql path="C:\Blue\PneuStore_API\PneuStore_API\obj\Release\net5.0\PubTmp\EFSQLScripts\PneuStore_API.Data.API_Context.sql" />
+</sitemanifest>

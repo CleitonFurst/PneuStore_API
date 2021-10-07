@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Esse arquivo é usado pelo processo de publicação/pacote do seu projeto Web. É possível personalizar o comportamento deste processo
+ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAC9IPjjUDNEeIZc/6JgFFcwAAAAACAAAAAAAQZgAAAAEAACAAAAB42c2+veha57XyF0LSZn58GSWbzAnELhc/CvHckyssWgAAAAAOgAAAAAIAACAAAAB+UBLBJh6fz8EI3zGN0EkeYp6WXEHk4e8C5ZUTUjVDe4AAAADWE0rj6POzZjYWdIt4PtP+xuBZPef6qOh4/Dw2t9z/1gUOhuOPuP2oPKhjbEWra/x22+GVzXUVoxDHWNJBwsQ+A2QvXRPMOfuTuKFkAxS/hiSNrMzfZtZ1/6yCnO00ZXFi83kKKmwm1FSB6SGtYGz9eTXrkjctL8eWh56HtZZmVUAAAAAKnvhiwH4Xa61vuoRZdFmEraqOczq0U2At3Xj6RmvDkp7c58+mArhqEpYY952lBBatcikE99wec78X92zmj7br</EncryptedPassword>
+    <History>True|2021-10-07T01:48:31.2221253Z;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="PneuStore_API.Data.API_Context">
+      <Value>Data Source=tcp:pneustore-apidbserver.database.windows.net,1433%3bInitial Catalog=PneuStore_API_db%3bUser Id=grupo03%40pneustore-apidbserver%3bPassword=Pneustore12!</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
