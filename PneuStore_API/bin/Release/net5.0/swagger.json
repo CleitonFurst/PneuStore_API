@@ -61,7 +61,7 @@
           }
         }
       },
-      "patch": {
+      "put": {
         "tags": [
           "Cart"
         ],
@@ -151,6 +151,55 @@
             "description": "Success"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "Pedido"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Pedido"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Pedido"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
       }
     },
     "/Produto": {
@@ -167,6 +216,55 @@
     },
     "/Produto/{id}": {
       "get": {
+        "tags": [
+          "Produto"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Produto"
+        ],
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
         "tags": [
           "Produto"
         ],
@@ -332,6 +430,25 @@
           "type": "string"
         },
         "products": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Product"
+          }
+        }
+      }
+    },
+    "Pedido": {
+      "type": "object",
+      "properties": {
+        "pedidoId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "usuarioId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "produtos": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/Product"

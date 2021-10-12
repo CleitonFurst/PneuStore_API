@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Blue\\PneuStore_API\\PneuStore_API\\PneuStore_API.csproj": {}
+    "C:\\Blue\\PneuStore\\PneuStore_API\\PneuStore_API.csproj": {}
   },
   "projects": {
-    "C:\\Blue\\PneuStore_API\\PneuStore_API\\PneuStore_API.csproj": {
+    "C:\\Blue\\PneuStore\\PneuStore_API\\PneuStore_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Blue\\PneuStore_API\\PneuStore_API\\PneuStore_API.csproj",
+        "projectUniqueName": "C:\\Blue\\PneuStore\\PneuStore_API\\PneuStore_API.csproj",
         "projectName": "PneuStore_API",
-        "projectPath": "C:\\Blue\\PneuStore_API\\PneuStore_API\\PneuStore_API.csproj",
+        "projectPath": "C:\\Blue\\PneuStore\\PneuStore_API\\PneuStore_API.csproj",
         "packagesPath": "C:\\Users\\lambd\\.nuget\\packages\\",
-        "outputPath": "C:\\Blue\\PneuStore_API\\PneuStore_API\\obj\\",
+        "outputPath": "C:\\Blue\\PneuStore\\PneuStore_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lambd\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
             "FakeItEasy": {
               "target": "Package",
               "version": "[7.2.0, )"
+            },
+            "Microsoft.AspNet.WebApi.Cors": {
+              "target": "Package",
+              "version": "[5.2.7, )"
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",

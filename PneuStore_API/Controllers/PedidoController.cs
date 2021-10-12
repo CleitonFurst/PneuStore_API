@@ -30,23 +30,25 @@ namespace PneuStore_API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Pedido u)
-        {
-            return _service.Create(u) ? ApiOk("Pedido criado com sucesso !") :
-                ApiNotFound("Erro ao atualizar o Pedido!");
+        public IActionResult Create([FromBody] Pedido p) =>
+            _service.Create(p) ?
+            ApiOk("Produto criado com sucesso !") :
+            ApiNotFound("Erro ao criar o produto!");
+    
 
-        }
+        [Route("{id}")]
+        [HttpPut]
+        public IActionResult Update([FromBody] Pedido p) =>
+            _service.Update(p) ?
+            ApiOk("O Carrinho foi atualizado com sucesso !") :
+            ApiNotFound("Erro ao atualizar o carrinho");
+
+
+        [Route("{id}")]
         [HttpDelete]
         public IActionResult Delete(int? id) =>
-            _service.Delete(id) ?
-            ApiOk("Pedido deletado com sucesso!") :
-            ApiNotFound("Erro ao deletar o Pedido!");
-        [HttpPut]
-        public IActionResult Update([FromBody] Pedido u)
-        {
-            return _service.Update(u) ?
-                ApiOk("Pedido atualizado om sucesso !") :
-                ApiNotFound("Erro ao atualizar o Pedido!");
-        }
+          _service.Delete(id) ?
+              ApiOk("O produto foi deletado com sucesso!") :
+              ApiNotFound("Erro ao deletar o produto!");
     }
 }

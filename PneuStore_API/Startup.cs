@@ -41,11 +41,18 @@ namespace PneuStore_API
             services.AddTransient<IProdutoService, ProdutoService>();
             services.AddTransient<ICartService, CartService>();
             services.AddTransient<IPedidoService, PedidoService>();
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(
+                Options => Options.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -54,7 +61,7 @@ namespace PneuStore_API
             }
 
             app.UseHttpsRedirection();
-
+            
             app.UseRouting();
 
             app.UseAuthorization();

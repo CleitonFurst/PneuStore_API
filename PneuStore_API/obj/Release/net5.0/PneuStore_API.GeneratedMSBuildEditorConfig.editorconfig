@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = PneuStore_API
-build_property.ProjectDir = C:\Blue\PneuStore_API\PneuStore_API\
+build_property.ProjectDir = C:\Blue\PneuStore\PneuStore_API\

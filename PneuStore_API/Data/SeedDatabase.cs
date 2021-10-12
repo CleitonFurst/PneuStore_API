@@ -24,6 +24,13 @@ namespace PneuStore_API.Data
                 double preco = random.NextDouble() * 1000;
             }
 
+            string[] imagem = new string[]
+            {
+                "https://portalauto.com.br/wp-content/uploads/2015/12/Optimized-roda_aco_nissan_livina_aro_15_1756_2_640.jpg",
+                "https://bsdunlop.fbitsstatic.net/img/p/pneu-sumitomo-195-55-r15-bc20-85h-111027/297501.jpg?w=590&h=590&v=no-change",
+                "https://bsdunlop.fbitsstatic.net/img/p/pneu-sumitomo-185-70-r14-bc10-88t-110962/297436.jpg?w=800&h=800&v=no-change"
+            };
+
             using (var Context = new API_Context(serviceProvider.GetRequiredService<DbContextOptions<API_Context>>()))
             {
                 if (Context.Products.Any())
@@ -41,12 +48,15 @@ namespace PneuStore_API.Data
                     //gerando descrições
                     var sobreAsParadas = $"{sobre[random.Next(0, sobre.Length)]}";
 
+                    //gerando as imagens
+                    var imagemP = $"{imagem[random.Next(0, imagem.Length)]}";
                     //adicionando os dados
                     Context.Products.AddRange(new Product
                     {
                         ProductName = produtoCadastrado,
                         UnitPrice = preco,
-                        Description = sobreAsParadas
+                        Description = sobreAsParadas,
+                        ImagePath = imagemP
                         
                     });
 

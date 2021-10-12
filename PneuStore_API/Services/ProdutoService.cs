@@ -23,6 +23,49 @@ namespace PneuStore_API.Services
         {
             return _context.Products.FirstOrDefault(p => p.ProductID == id);
         }
+
+
+        public bool Create(Product u)
+        {
+            try
+            {
+                _context.Products.Add(u);
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool Delete(int? id)
+        {
+            try
+            {
+                _context.Products.Remove(Get(id));
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool Update(Product p)
+        {
+            try
+            {
+                _context.Products.Update(p);
+                _context.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public List<Product> ProductByUserRole(string getRole)
         {
             var query1 = from product in _context.Set<Product>()
