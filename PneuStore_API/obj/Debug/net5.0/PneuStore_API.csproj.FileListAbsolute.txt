@@ -1706,3 +1706,10 @@ C:\Blue\PneuStore\PneuStore_API\bin\Debug\net5.0\System.Net.Http.Formatting.dll
 C:\Blue\PneuStore\PneuStore_API\bin\Debug\net5.0\System.Web.Http.dll
 C:\Blue\PneuStore\PneuStore_API\bin\Debug\net5.0\System.Web.Http.Cors.dll
 C:\Blue\PneuStore\PneuStore_API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Blue\PneuStore\PneuStore_API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Blue\PneuStore\PneuStore_API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Blue\PneuStore\PneuStore_API\bin\Debug\net5.0\refs\Interop.MSXML2.dll
+C:\Blue\PneuStore\PneuStore_API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Blue\PneuStore\PneuStore_API\obj\Debug\net5.0\Interop.MSXML2.dll
+C:\Blue\PneuStore\PneuStore_API\obj\Debug\net5.0\PneuStore_API.csproj.ResolveComReference.cache
+C:\Blue\PneuStore\PneuStore_API\bin\Debug\net5.0\PneuStore_API.xml

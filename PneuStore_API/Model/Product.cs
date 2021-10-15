@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -22,6 +23,12 @@ namespace PneuStore_API.Model
         [Display(Name = "Price")]
         public double? UnitPrice { get; set; }
 
+        public DateTime? created { get; set; }
+        public DateTime? updated { get; set; }
+        public string updatedById { get; set; }
+        public IdentityUser updatedBy { get; set; }
+        public string createdById { get; set; }
+        public IdentityUser createdBy { get; set; }
         public int? CategoryID { get; set; }
 
         public virtual Category Category { get; set; }

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PneuStore_API</name>
+    </assembly>
+    <members>
+        <member name="M:PneuStore_API.Controllers.AuthController.Register(Microsoft.AspNetCore.Identity.IdentityUser)">
+            <summary>
+            Registra um novo usuário
+            </summary>
+            <param name="identityUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PneuStore_API.Controllers.AuthController.Token(Microsoft.AspNetCore.Identity.IdentityUser)">
+            <summary>
+            Cria um token para o usuário.
+            </summary>
+            <param name="identityUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PneuStore_API.Controllers.ProdutoController.Index">
+            <summary>
+            Informa os produtos registrados
+            </summary>
+            <returns></returns>
+            
+        </member>
+        <member name="M:PneuStore_API.Controllers.ProdutoController.Index(System.Nullable{System.Int32})">
+            <summary>
+            Busca um produto pelo id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PneuStore_API.Controllers.ProdutoController.Random">
+            <summary>
+            Busca um produto aleatorio dentro do banco
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PneuStore_API.Controllers.ProdutoController.StoreByRole(System.String)">
+            <summary>
+            Mostra os produtos criados por um tipo de usuário.
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PneuStore_API.Controllers.ProdutoController.Create(PneuStore_API.Model.Product)">
+            <summary>
+            Cadastra um novo produto.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PneuStore_API.Controllers.ProdutoController.Update(PneuStore_API.Model.Product)">
+            <summary>
+            Atualiza um produto
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PneuStore_API.Controllers.ProdutoController.Delete(System.Nullable{System.Int32})">
+            <summary>
+            Exclui um produto
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

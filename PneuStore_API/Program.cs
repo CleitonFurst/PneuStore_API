@@ -17,15 +17,15 @@ namespace PneuStore_API
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
+
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
                 var context = services.GetRequiredService<API_Context>();
                 context.Database.Migrate();
-                SeedDatabase.Initialize(services);
+                //SeedDatabase.Initialize(services);
             }
-            
-            
+
             host.Run();
         }
 

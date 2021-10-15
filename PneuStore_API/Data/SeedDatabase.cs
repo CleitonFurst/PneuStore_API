@@ -26,9 +26,9 @@ namespace PneuStore_API.Data
 
             string[] imagem = new string[]
             {
-                "https://portalauto.com.br/wp-content/uploads/2015/12/Optimized-roda_aco_nissan_livina_aro_15_1756_2_640.jpg",
-                "https://bsdunlop.fbitsstatic.net/img/p/pneu-sumitomo-195-55-r15-bc20-85h-111027/297501.jpg?w=590&h=590&v=no-change",
-                "https://bsdunlop.fbitsstatic.net/img/p/pneu-sumitomo-185-70-r14-bc10-88t-110962/297436.jpg?w=800&h=800&v=no-change"
+                "https://static.pneustore.com.br/medias/sys_master/images/images/h1f/h73/8969547120670/pneu-aptany-aro-16-ra301-195-45r16-84v-xl-1.jpg",
+                "https://static.pneustore.com.br/medias/sys_master/images/images/hf5/h92/8859190951966/pneu-farroad-aro-16-frd16-185-55r16-83v-1.jpg",
+                "https://static.pneustore.com.br/medias/sys_master/images/images/hdf/he1/8890239254558/pneu-formula-aro-16-formula-evo-205-55r16-91v-1.jpg"
             };
 
             using (var Context = new API_Context(serviceProvider.GetRequiredService<DbContextOptions<API_Context>>()))

@@ -14,7 +14,7 @@ namespace PneuStore_API.Data
        
         public API_Context(DbContextOptions<API_Context> options) 
             : base (options) { }
-        public DbSet<Usuario> Usuarios { get; set;}       
+           
         public DbSet<CartItem> Cart { get; set; }
         public DbSet<Pedido> Pedido { get; set; }
         public DbSet<Category> Categories { get; set; }

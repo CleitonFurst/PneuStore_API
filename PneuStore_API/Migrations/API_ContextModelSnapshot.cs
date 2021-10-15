@@ -16,7 +16,7 @@ namespace PneuStore_API.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.10")
+                .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -162,10 +162,12 @@ namespace PneuStore_API.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -202,10 +204,12 @@ namespace PneuStore_API.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -303,31 +307,29 @@ namespace PneuStore_API.Migrations
                     b.Property<double?>("UnitPrice")
                         .HasColumnType("float");
 
+                    b.Property<DateTime?>("created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("createdById")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("updated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("updatedById")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("ProductID");
 
                     b.HasIndex("CategoryID");
 
                     b.HasIndex("PedidoId");
 
+                    b.HasIndex("createdById");
+
+                    b.HasIndex("updatedById");
+
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("PneuStore_API.Model.Usuario", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Endereco")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -402,7 +404,19 @@ namespace PneuStore_API.Migrations
                         .WithMany("Produtos")
                         .HasForeignKey("PedidoId");
 
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "createdBy")
+                        .WithMany()
+                        .HasForeignKey("createdById");
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "updatedBy")
+                        .WithMany()
+                        .HasForeignKey("updatedById");
+
                     b.Navigation("Category");
+
+                    b.Navigation("createdBy");
+
+                    b.Navigation("updatedBy");
                 });
 
             modelBuilder.Entity("PneuStore_API.Model.Category", b =>
