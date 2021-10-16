@@ -39,7 +39,7 @@ namespace PneuStore_API
         public void ConfigureServices(IServiceCollection services)
 #pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
-
+            services.AddCors();
             services.AddControllers();
             #region DefaultSwagger
             services.AddSwaggerGen(c =>
@@ -183,6 +183,11 @@ namespace PneuStore_API
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
 #pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
+            app.UseCors(
+                options => options.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                );
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
