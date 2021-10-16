@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 
 namespace PneuStore_API.Data
 {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public class SeedDatabase 
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public static void Initialize(IServiceProvider serviceProvider)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             int amostra = 5;
 

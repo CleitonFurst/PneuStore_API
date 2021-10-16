@@ -10,8 +10,8 @@ using PneuStore_API.Data;
 namespace PneuStore_API.Migrations
 {
     [DbContext(typeof(API_Context))]
-    [Migration("20211015004133_start")]
-    partial class start
+    [Migration("20211016015142_inicial")]
+    partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -223,8 +223,10 @@ namespace PneuStore_API.Migrations
 
             modelBuilder.Entity("PneuStore_API.Model.CartItem", b =>
                 {
-                    b.Property<string>("ItemId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("ItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CartId")
                         .HasColumnType("nvarchar(max)");

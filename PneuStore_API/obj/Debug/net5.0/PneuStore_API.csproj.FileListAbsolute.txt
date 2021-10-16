@@ -1713,3 +1713,15 @@ C:\Blue\PneuStore\PneuStore_API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentica
 C:\Blue\PneuStore\PneuStore_API\obj\Debug\net5.0\Interop.MSXML2.dll
 C:\Blue\PneuStore\PneuStore_API\obj\Debug\net5.0\PneuStore_API.csproj.ResolveComReference.cache
 C:\Blue\PneuStore\PneuStore_API\bin\Debug\net5.0\PneuStore_API.xml
+C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\bin\Debug\net5.0\PneuStore_API.xml
+C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\bin\Debug\net5.0\refs\Interop.MSXML2.dll
+C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\bin\Debug\net5.0\System.Web.Cors.dll
+C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\bin\Debug\net5.0\System.Web.Http.dll
+C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\bin\Debug\net5.0\System.Web.Http.Cors.dll
+C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\obj\Debug\net5.0\Interop.MSXML2.dll
+C:\Users\furst\Desktop\Projeto PeneuStore\PneuStore_API\PneuStore_API\obj\Debug\net5.0\PneuStore_API.csproj.ResolveComReference.cache

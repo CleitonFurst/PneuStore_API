@@ -14,11 +14,15 @@ using System.Threading.Tasks;
 
 namespace PneuStore_API.API
 {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     {
         readonly IAuthService _userService;
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public BasicAuthenticationHandler(IAuthService userService,
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
             IOptionsMonitor<AuthenticationSchemeOptions> options,
             ILoggerFactory logger,
             UrlEncoder encoder,
@@ -26,7 +30,9 @@ namespace PneuStore_API.API
         {
             _userService = userService;
         }
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             string email = null;
             try

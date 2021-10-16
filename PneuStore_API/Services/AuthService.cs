@@ -11,13 +11,17 @@ using System.Threading.Tasks;
 
 namespace PneuStore_API.Services
 {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public class AuthService : IAuthService
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     {
         UserManager<IdentityUser> _userManager;
         SignInManager<IdentityUser> _signInManager;
         IConfiguration _config;
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public AuthService(UserManager<IdentityUser> userManager,
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
             SignInManager<IdentityUser> signInManager,
             IConfiguration config)
         {
@@ -26,7 +30,9 @@ namespace PneuStore_API.Services
             _config = config;
         }
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public async Task<IdentityResult> Create(IdentityUser identityUser)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             var result = await _userManager.CreateAsync(identityUser, identityUser.PasswordHash);
             if (result.Succeeded)
@@ -37,7 +43,9 @@ namespace PneuStore_API.Services
             return result;
         }
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public string GenerateToken(IdentityUser identityUser)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             var user = GetUser(identityUser);
             var role = GetUserRole(user);
@@ -62,20 +70,26 @@ namespace PneuStore_API.Services
             return tokenHandler.WriteToken(token);
         }
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public IdentityUser GetUser(IdentityUser identityUser)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             var user = _userManager.FindByNameAsync(identityUser.UserName).Result;
             var valid = _signInManager.CheckPasswordSignInAsync(user, identityUser.PasswordHash, false);
             return valid.Result.Succeeded ? user : null;
         }
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public string GetUserRole(IdentityUser identityUser)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             var rolename = _userManager.GetRolesAsync(identityUser);
             return rolename.Result[0];
         }
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public async Task<SignInResult> ValidateUser(IdentityUser identityUser)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             var user = await _userManager.FindByNameAsync(identityUser.UserName);
             var valid = await _signInManager.CheckPasswordSignInAsync(user, identityUser.PasswordHash, false);

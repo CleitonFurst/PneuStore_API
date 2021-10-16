@@ -221,8 +221,10 @@ namespace PneuStore_API.Migrations
 
             modelBuilder.Entity("PneuStore_API.Model.CartItem", b =>
                 {
-                    b.Property<string>("ItemId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("ItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CartId")
                         .HasColumnType("nvarchar(max)");

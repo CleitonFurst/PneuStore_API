@@ -8,25 +8,35 @@ using System.Threading.Tasks;
 
 namespace PneuStore_API.Services
 {
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     public class ProdutoService : IProdutoService
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
     {
         API_Context _context;
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public ProdutoService(API_Context context)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             _context = context;
         }
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public List<Product> All()
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             return _context.Products.ToList();
         }
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public Product Get(int? id)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             return _context.Products.FirstOrDefault(p => p.ProductID == id);
         }
 
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public bool Create(Product u)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             try
             {
@@ -41,7 +51,9 @@ namespace PneuStore_API.Services
             }
         }
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public bool Delete(int? id)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {   if (!_context.Products.Any(c => c.ProductID == id))
                 throw new Exception("Produto não existe");
             try
@@ -56,7 +68,9 @@ namespace PneuStore_API.Services
             }
         }
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public bool Update(Product p)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             try
             {
@@ -73,7 +87,9 @@ namespace PneuStore_API.Services
 
 
         
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public List<Product> ProductByUserRole(string getRole)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             var query1 = from Product in _context.Set<Product>()
                          join user in _context.Set<IdentityUser>()

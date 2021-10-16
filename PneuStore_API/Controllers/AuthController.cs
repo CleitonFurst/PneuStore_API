@@ -15,11 +15,15 @@ namespace PneuStore_API.Controllers
         [Consumes(MediaTypeNames.Application.Json)]
         [ApiController]
         [Route("[Controller]")]
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         public class AuthController : ApiBaseController
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
         {
             IAuthService _service;
 
+#pragma warning disable CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
             public AuthController(IAuthService service)
+#pragma warning restore CS1591 // O comentário XML ausente não foi encontrado para o tipo ou membro visível publicamente
             {
                 _service = service;
             }
